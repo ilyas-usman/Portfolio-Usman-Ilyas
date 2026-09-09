@@ -16,6 +16,7 @@ import { GlassIcons, GlassIconsItem } from "@/components/ui/glass-icons";
 import { SpecularButton } from "@/components/ui/specular-button";
 import { DecayCard } from "@/components/ui/decay-card";
 import { DomeGallery } from "@/components/ui/dome-gallery";
+import DriftWall from "@/components/ui/drift-wall";
 
 const LinkedinIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24">
@@ -326,6 +327,56 @@ const skillItems = [
   { id: 36, name: "Database Normalization", category: "Core Concepts", color: "#6366f1" },
 ];
 
+const driftWallItems = [
+  // Programming Languages
+  { image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80", title: "Python", category: "Language", tag: "AI & Scripting" },
+  { image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=400&q=80", title: "C++", category: "Language", tag: "System Performance" },
+  { image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80", title: "C#", category: "Language", tag: "OOP & .NET" },
+  { image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=400&q=80", title: "Java", category: "Language", tag: "Enterprise Core" },
+  { image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=400&q=80", title: "SQL", category: "Language", tag: "Data Queries" },
+
+  // Mobile & Web Stack
+  { image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80", title: "Flutter", category: "Mobile Stack", tag: "Cross-Platform" },
+  { image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80", title: "Dart", category: "Mobile Stack", tag: "UI Framework" },
+  { image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=400&q=80", title: "TypeScript", category: "Web Stack", tag: "Type-Safe Systems" },
+  { image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=400&q=80", title: "React 19", category: "Web Stack", tag: "Frontend UI" },
+  { image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80", title: "Next.js 16", category: "Web Stack", tag: "Full-Stack SSR" },
+  { image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=400&q=80", title: "Tailwind CSS", category: "Web Stack", tag: "Styling & UI" },
+
+  // Backend & Databases
+  { image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=400&q=80", title: "Node.js", category: "Backend", tag: "Server Runtime" },
+  { image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80", title: "Express.js", category: "Backend", tag: "API Framework" },
+  { image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=400&q=80", title: "REST APIs", category: "Backend", tag: "Web Services" },
+  { image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=400&q=80", title: "SQL Server", category: "Database", tag: "Enterprise RDBMS" },
+  { image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=400&q=80", title: "MySQL", category: "Database", tag: "Relational DB" },
+  { image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=400&q=80", title: "MongoDB", category: "Database", tag: "NoSQL Documents" },
+
+  // Software Development Principles
+  { image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80", title: "OOP", category: "Software Eng", tag: "Object-Oriented" },
+  { image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80", title: "DSA", category: "Software Eng", tag: "Algorithms" },
+  { image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=400&q=80", title: "SDLC", category: "Software Eng", tag: "Lifecycle" },
+  { image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80", title: "Agile", category: "Software Eng", tag: "Scrum & Sprint" },
+  { image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80", title: "Database Design", category: "Software Eng", tag: "Data Modelling" },
+
+  // Tools & Technologies
+  { image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?auto=format&fit=crop&w=400&q=80", title: "Git", category: "Tools", tag: "Version Control" },
+  { image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=400&q=80", title: "GitHub", category: "Tools", tag: "Repository & CI" },
+  { image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80", title: "Visual Studio", category: "Tools", tag: "IDE Environment" },
+  { image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80", title: "VS Code", category: "Tools", tag: "Code Editor" },
+  { image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80", title: "Microsoft Excel", category: "Tools", tag: "Data Analysis" },
+  { image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80", title: "RStudio", category: "Tools", tag: "Stats & Analytics" },
+  { image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=400&q=80", title: "Wireshark", category: "Tools", tag: "Network Analysis" },
+  { image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=400&q=80", title: "Packet Tracer", category: "Tools", tag: "Cisco Networking" },
+
+  // AI & Core Concepts
+  { image: "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=400&q=80", title: "Artificial Intelligence", category: "AI Stack", tag: "Neural Networks" },
+  { image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&q=80", title: "Machine Learning", category: "AI Stack", tag: "Predictive Models" },
+  { image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80", title: "Agentic AI", category: "AI Stack", tag: "Autonomous Agents" },
+  { image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=400&q=80", title: "Authentication", category: "Concepts", tag: "JWT & Security" },
+  { image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=400&q=80", title: "CRUD Operations", category: "Concepts", tag: "Data Lifecycle" },
+  { image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=400&q=80", title: "Normalization", category: "Concepts", tag: "DB Optimization" },
+];
+
 interface ProjectItem {
   id: number;
   title: string;
@@ -574,12 +625,14 @@ export default function HomePage() {
   return (
     <main className="relative min-h-screen bg-slate-50 dark:bg-black text-slate-900 dark:text-white selection:bg-red-500 selection:text-white transition-colors duration-300">
       {/* Floating Header Navigation & Theme Toggle */}
-      <header className="fixed top-4 md:top-6 left-0 right-0 z-50 flex items-center justify-center gap-3 px-2 sm:px-4">
-        <LimelightNav
-          items={navItems}
-          limelightClassName="bg-red-600 dark:bg-red-500 shadow-[0_30px_15px_rgba(239,68,68,0.6)]"
-        />
-        <ThemeToggle />
+      <header className="fixed top-3 sm:top-6 left-0 right-0 z-50 flex items-center justify-center px-2 max-w-full pointer-events-none">
+        <div className="flex items-center justify-center gap-2 sm:gap-3 max-w-full pointer-events-auto">
+          <LimelightNav
+            items={navItems}
+            limelightClassName="bg-red-600 dark:bg-red-500 shadow-[0_30px_15px_rgba(239,68,68,0.6)]"
+          />
+          <ThemeToggle />
+        </div>
       </header>
 
       {/* Home Section (React Bits Pro Hero 1) */}
@@ -638,7 +691,6 @@ export default function HomePage() {
               Professional Experience
             </h3>
             <p className="text-sm text-slate-600 dark:text-zinc-400">
-              Interactive Bento Grid of key software engineering roles, AI internships, and academic achievements featuring particle star dynamics, spotlight tracking, border glow, and 3D magnetism.
             </p>
           </div>
 
@@ -665,17 +717,39 @@ export default function HomePage() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 text-xs font-mono text-slate-700 dark:text-zinc-400">
               <Code2 className="w-3.5 h-3.5 text-red-600 dark:text-red-500" />
-              Technical Stack
+              Interactive Skills Wall
             </div>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-zinc-200 dark:to-zinc-500 bg-clip-text text-transparent pb-3 pt-1 leading-normal">
-            Core Skills & Expertise
+            Core Skills & Tech Stack
           </h2>
+          <p className="max-w-2xl text-slate-600 dark:text-zinc-400 text-base">
+            Explore core technology stacks, languages, and technical capabilities.
+          </p>
         </div>
 
-        {/* React Bits DomeGallery 3D Component */}
-        <div className="pt-2">
-          <DomeGallery skills={skillItems} overlayBlurColor="transparent" />
+        {/* React Bits DriftWall 3D Component */}
+        <div className="relative h-[600px] w-full rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-900/90 dark:bg-zinc-950/90 overflow-hidden shadow-2xl">
+          <DriftWall
+            items={driftWallItems}
+            columns={6}
+            tileWidth={150}
+            tileHeight={100}
+            gap={14}
+            radius={10}
+            tilt={14}
+            turn={-12}
+            perspective={1100}
+            depth={100}
+            speed={36}
+            direction="up"
+            variance={0.45}
+            parallax={0.5}
+            lift={48}
+            fade={0.55}
+            dim={0.75}
+            overlayColor="#060010"
+          />
         </div>
       </section>
 
@@ -821,7 +895,6 @@ export default function HomePage() {
             Co-Curricular Activities & Honors
           </h2>
           <p className="max-w-2xl text-slate-600 dark:text-zinc-400 text-base">
-            Interactive GSAP accordion gallery of official certifications, DET language proficiency scores, academic merit scholarships, and competitive awards. Hover or click panels to expand.
           </p>
         </div>
 
@@ -1054,7 +1127,6 @@ export default function HomePage() {
             Languages, Hobbies & Capabilities
           </h2>
           <p className="max-w-2xl text-slate-600 dark:text-zinc-400 text-base">
-            Language proficiencies, athletic pursuits, gaming interests, Git version control, UI/UX prototyping, and agile workflows.
           </p>
         </div>
 
@@ -1066,7 +1138,7 @@ export default function HomePage() {
               <Languages className="w-5 h-5 text-red-600 dark:text-red-400" />
               Language Skills
             </h3>
-            
+
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {/* Mother Tongue: URDU */}
               <SpotlightCard className="w-full h-24 p-3.5 flex flex-col justify-between shadow-md hover:border-red-500/50 transition-colors">

@@ -83,8 +83,12 @@ export const LimelightNav = ({
 
   useLayoutEffect(() => {
     updateLimelight();
+    const timer = setTimeout(updateLimelight, 20);
     window.addEventListener("resize", updateLimelight);
-    return () => window.removeEventListener("resize", updateLimelight);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("resize", updateLimelight);
+    };
   }, [activeIndex, isReady, items]);
 
   useEffect(() => {
@@ -131,13 +135,13 @@ export const LimelightNav = ({
   };
 
   return (
-    <nav className={`relative inline-flex items-center h-14 md:h-16 rounded-full bg-white/85 dark:bg-[#161616]/90 backdrop-blur-md text-foreground border border-slate-200 dark:border-white/10 px-3 shadow-xl dark:shadow-2xl overflow-x-auto max-w-full no-scrollbar transition-colors duration-300 ${className}`}>
+    <nav className={`relative inline-flex items-center h-12 md:h-16 rounded-full bg-white/85 dark:bg-[#161616]/90 backdrop-blur-md text-foreground border border-slate-200 dark:border-white/10 px-2 sm:px-3 shadow-xl dark:shadow-2xl max-w-[calc(100vw-4rem)] sm:max-w-full overflow-x-auto no-scrollbar transition-all duration-300 ${className}`}>
       {items.map(({ id, icon, label, href, onClick }, index) => (
         <a
           key={id}
           href={href || "#"}
           ref={el => { navItemRefs.current[index] = el; }}
-          className={`relative z-20 flex h-full cursor-pointer items-center justify-center px-3 sm:px-4 py-2 gap-2 text-sm font-medium transition-colors duration-200 ${
+          className={`relative z-20 flex h-full cursor-pointer items-center justify-center px-2.5 sm:px-4 py-1.5 sm:py-2 gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium transition-all duration-200 ${
             activeIndex === index 
               ? 'text-slate-900 dark:text-white font-semibold' 
               : 'text-slate-500 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-zinc-200'
@@ -151,10 +155,10 @@ export const LimelightNav = ({
             } ${(icon as React.ReactElement<{ className?: string }>).props?.className || ''} ${iconClassName || ''}`,
           })}
           {label && (
-            <span className={`whitespace-nowrap transition-opacity duration-200 text-xs sm:text-sm ${
+            <span className={`whitespace-nowrap transition-all duration-200 text-xs sm:text-sm ${
               activeIndex === index 
-                ? 'font-semibold text-slate-900 dark:text-white' 
-                : 'font-normal text-slate-600 dark:text-zinc-400'
+                ? 'inline-block font-semibold text-slate-900 dark:text-white' 
+                : 'hidden md:inline font-normal text-slate-600 dark:text-zinc-400'
             }`}>
               {label}
             </span>

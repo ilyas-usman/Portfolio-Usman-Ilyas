@@ -1,19 +1,19 @@
 # 🚀 Muhammad Usman Ilyas — Software Engineer Portfolio
 
-An interactive, high-performance developer portfolio built with **Next.js 16 (App Router)**, **TypeScript**, **Tailwind CSS**, **GSAP**, and custom animated UI engines. Designed with rich aesthetics, sleek dark/light mode transitions, and full mobile responsiveness across iOS and Android devices.
+An interactive, high-performance developer portfolio built with **Next.js 16 (App Router)**, **TypeScript**, **Tailwind CSS**, **GSAP**, and custom 3D animated UI engines. Designed with rich aesthetics, sleek dark/light mode transitions, and full mobile responsiveness across iOS and Android devices.
 
 ---
 
-## ✨ Features & Interactive UI Components
+## ✨ Key Features & Interactive UI Components
 
-- **⚡ React Bits Hero Section**: High-impact personal header with dual language script, animated status badges, and profile image frame.
-- **🎯 Limelight Floating Navbar**: Adaptive-width navigation bar with an active section spotlight effect that syncs automatically with page scroll.
-- **🔮 3D Skill Dome Gallery**: Interactive 3D spherical gallery displaying technical competencies and core skills.
-- **🪄 MagicBento Career Journey**: Bento grid featuring particle star physics, 3D tilt, spotlight tracking, and border glow for professional experience.
-- **⚡ Electric Border & CursorGrid Project Showcase**: Custom neon electric borders paired with interactive canvas grid ripple effects on hover/touch.
+- **⚡ React Bits Hero Section**: High-impact personal header with dual language script, animated status badges, social connectivity links, and profile image frame.
+- **🎯 Limelight Floating Navbar**: Adaptive-width navigation bar with an active section spotlight effect that syncs automatically with page scroll and collapses gracefully on mobile screens.
+- **🌊 React Bits 3D DriftWall Skills Matrix**: Interactive 3D drifting wall showcasing all **36 core skills** across languages, frameworks, AI/ML tools, databases, and core concepts with 3D perspective depth, pointer parallax, touch interaction, and dynamic responsive scaling.
+- **🪄 MagicBento Career Journey**: Custom bento grid featuring particle star physics, 3D tilt, spotlight tracking, and border glow for professional experience and AI engineering background.
+- **⚡ Electric Border & CursorGrid Showcase**: Custom neon electric borders paired with interactive canvas grid ripple effects on hover and touch for featured projects.
 - **🖼️ GSAP Accordion Gallery**: Smooth parallax accordion gallery showcasing certifications, honors, DET scores, and merit awards.
-- **📱 Responsive Layout**: Tested across all mobile viewports (iOS Safari, Android Chrome, Tablets) with safe-area inset integration and zero auto-zoom glitches.
-- **🌗 Dark / Light Mode**: Persistent theme provider powered by `next-themes`.
+- **📱 100% Mobile & Touch Compatibility**: Mobile-first touch handlers, touch-action configuration, zero auto-zoom glitches, and full iOS Safari and Android Chrome optimization.
+- **🌗 Dark / Light Mode**: Persistent theme toggle powered by `next-themes` with custom smooth icons.
 
 ---
 
@@ -22,13 +22,13 @@ An interactive, high-performance developer portfolio built with **Next.js 16 (Ap
 - **Framework**: [Next.js 16 (App Router)](https://nextjs.org/)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Animations**: [GSAP](https://gsap.com/), HTML5 Canvas, React Bits Pro Components
+- **Animations**: GSAP, React Bits Pro Components (`DriftWall`, `Hero1`, `LimelightNav`), HTML5 Canvas
 - **Icons**: [Lucide React](https://lucide.dev/)
-- **Theme**: [Next Themes](https://github.com/pacocoursey/next-themes)
+- **Theme Engine**: [Next Themes](https://github.com/pacocoursey/next-themes)
 
 ---
 
-## 📂 Featured Projects (9 Real Projects)
+## 📁 Featured Projects (9 Real Projects)
 
 1. **RealEstate Hub — Voice & Chat AI Agent** (Conversational & Voice AI)
    - 10-Node LangGraph state machine & Hybrid RAG (SQL + ChromaDB)
@@ -83,25 +83,39 @@ An interactive, high-performance developer portfolio built with **Next.js 16 (Ap
 usman_portfolio/
 ├── app/
 │   ├── layout.tsx             # Root layout with Viewport & ThemeProvider
-│   ├── page.tsx               # Portfolio main page (Hero, About, Skills, Projects, Contact)
-│   └── globals.css            # Global CSS styles & tailwind imports
+│   ├── page.tsx               # Main portfolio page (Hero, About, Skills, Projects, Contact)
+│   └── globals.css            # Global CSS styles & Tailwind imports
 ├── components/
 │   ├── theme-provider.tsx     # Light/Dark mode provider
-│   └── ui/                    # Animated UI components
+│   └── ui/                    # Production UI components
+│       ├── accordion-gallery.css
 │       ├── accordion-gallery.tsx
+│       ├── cursor-grid.css
 │       ├── cursor-grid.tsx
+│       ├── decay-card.css
 │       ├── decay-card.tsx
+│       ├── dome-gallery.css
 │       ├── dome-gallery.tsx
+│       ├── drift-wall.css     # 3D DriftWall CSS styles
+│       ├── drift-wall.tsx     # 3D DriftWall skills component
+│       ├── electric-border.css
 │       ├── electric-border.tsx
+│       ├── glass-icons.css
 │       ├── glass-icons.tsx
 │       ├── hero-1.tsx
 │       ├── limelight-nav.tsx
+│       ├── magic-bento.css
 │       ├── magic-bento.tsx
-│       ├── spotlight-card.tsx
+│       ├── prism.css
+│       ├── prism.tsx
+│       ├── skill-icons.tsx
+│       ├── specular-button.css
 │       ├── specular-button.tsx
+│       ├── spotlight-card.css
+│       ├── spotlight-card.tsx
 │       └── theme-toggle.tsx
-├── public/                    # Static assets & images
-├── package.json               # Project dependencies & scripts
+├── public/                    # Static assets & profile photos
+├── package.json               # Dependencies & scripts
 ├── next.config.ts             # Next.js configuration
 └── README.md                  # Project documentation
 ```
